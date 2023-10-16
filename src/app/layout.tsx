@@ -3,7 +3,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 
-const inter = Space_Grotesk({ subsets: ["latin"], weight: ["500"] });
+const inter = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          <div className="w-full h-screen flex justify-center">
-            <div className="w-full h-full max-w-screen-sm">{children}</div>
+          <div className="w-full h-[100svh] flex justify-center">
+            <div className="w-full h-full border-x border-x-[#111] max-w-lg">
+              {children}
+            </div>
           </div>
         </Provider>
       </body>

@@ -13,4 +13,13 @@ datasource db {
 model User {
   id        String @id @default(cuid())
   publickey String @unique
+  weight Weight[]
+}
+
+model Weight {
+  id        String @id @default(cuid())
+  grams String
+  date DateTime
+  user User @relation(fields: [userId], references: [id])
+  userId String
 }
